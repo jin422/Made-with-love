@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Made With Love | Artisanal Sweet Creations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --creamy-beige: #f8f3e9;
+            --pastel-pink: #ffd6d6;
+            --cocoa-brown: #8b4513;
+            --honey-gold: #ffb347;
+            --soft-white: #fffaf0;
+            --soft-brown: #a0522d;
+            --light-pink: #ffeaea;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--creamy-beige);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--cocoa-brown);
+        }
+
+        .handwritten {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background: var(--honey-gold);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--pastel-pink);
+            color: var(--cocoa-brown);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px var(--shadow);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--honey-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--cocoa-brown);
+            color: var(--creamy-beige);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--soft-white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--pastel-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(255, 182, 182, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .logo-icon:before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--cocoa-brown);
+            opacity: 0.1;
+        }
+
+        .logo-icon:after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: var(--honey-gold);
+        }
+
+        .logo-text h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: var(--cocoa-brown);
+            line-height: 1;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--soft-brown);
+            margin-top: 3px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--cocoa-brown);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--honey-gold);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--honey-gold);
+            left: 0;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--pastel-pink);
+            color: var(--cocoa-brown);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--cocoa-brown);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            background: linear-gradient(rgba(248, 243, 233, 0.9), rgba(248, 243, 233, 0.8)), url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80') no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            text-align: center;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            font-family: 'Dancing Script', cursive;
+            color: var(--honey-gold);
+            display: block;
+            font-size: 4rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--soft-brown);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        /* Featured Sweets Carousel */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s ease;
+            padding: 10px;
+        }
+
+        .product-card {
+            min-width: 300px;
+            background-color: var(--soft-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) rotateY(5deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, var(--pastel-pink), transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .product-card:hover:before {
+            opacity: 0.3;
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: var(--light-pink);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image:after {
+            content: '✨';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image:after {
+            opacity: 1;
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .product-price {
+            color: var(--honey-gold);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--pastel-pink);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-dot.active {
+            background-color: var(--honey-gold);
+            transform: scale(1.2);
+        }
+
+        /* Story Section */
+        .story-section {
+            background-color: var(--soft-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-section:before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50,5 C60,5 70,15 70,25 C70,35 60,45 50,45 C40,45 30,35 30,25 C30,15 40,5 50,5 Z" fill="%23ffd6d6" opacity="0.3"/></svg>') repeat;
+            top: 50px;
+            left: 50px;
+            opacity: 0.5;
+        }
+
+        .story-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .story-text {
+            flex: 1;
+        }
+
+        .story-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .story-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .story-icons {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .story-icon {
+            width: 120px;
+            height: 120px;
+            background-color: var(--creamy-beige);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--honey-gold);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .story-icon:hover {
+            transform: scale(1.1);
+            background-color: var(--pastel-pink);
+        }
+
+        /* Interactive Menu */
+        .menu-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: var(--soft-white);
+            border: 1px solid var(--pastel-pink);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--pastel-pink);
+            color: var(--cocoa-brown);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background-color: var(--soft-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item:hover .menu-item-image:after {
+            opacity: 1;
+        }
+
+        .menu-item-image {
+            height: 180px;
+            background-color: var(--light-pink);
+            position: relative;
+        }
+
+        .menu-item-image:after {
+            content: '+';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--honey-gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            opacity: 0;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .menu-item-content {
+            padding: 20px;
+        }
+
+        .menu-item-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .allergen-toggle {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--cocoa-brown);
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--soft-white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--creamy-beige);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: rotate(1deg);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 4rem;
+            color: var(--pastel-pink);
+            font-family: Georgia, serif;
+            opacity: 0.7;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--pastel-pink);
+            border: 3px solid var(--honey-gold);
+        }
+
+        /* Kitchen Live */
+        .kitchen-live {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kitchen-video {
+            height: 400px;
+            background: linear-gradient(rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.7)), url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        .kitchen-text {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .kitchen-text h3 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--soft-white);
+            text-align: center;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter:before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: var(--pastel-pink);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            opacity: 0.3;
+        }
+
+        .newsletter h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid var(--pastel-pink);
+            border-radius: 50px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--cocoa-brown);
+            color: var(--creamy-beige);
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%23f8f3e9"/></svg>') no-repeat center top;
+            top: 0;
+            left: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo h3 {
+            color: var(--creamy-beige);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+        }
+
+        .footer-hours h4, .footer-contact h4 {
+            margin-bottom: 20px;
+            color: var(--creamy-beige);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--creamy-beige);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--honey-gold);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .steam {
+            position: absolute;
+            bottom: 100%;
+            width: 100%;
+            height: 100px;
+            pointer-events: none;
+        }
+
+        .steam span {
+            position: absolute;
+            bottom: 0;
+            display: block;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: steam-animation 5s linear infinite;
+        }
+
+        @keyframes steam-animation {
+            0% {
+                transform: translateY(0) translateX(0) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) translateX(20px) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .story-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero h1 span {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100%;
+            background-color: var(--soft-white);
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            transition: right 0.4s ease;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .cart-modal.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--pastel-pink);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--cocoa-brown);
+        }
+
+        /* Customizer Modal */
+        .customizer-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .customizer-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .customizer-content {
+            background-color: var(--soft-white);
+            width: 90%;
+            max-width: 900px;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-customizer {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--cocoa-brown);
+        }
+
+        /* Overlay for modals */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <h1>Made With Love</h1>
+                    <p>Artisanal Sweet Creations</p>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#customizer">Customize</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#kitchen">Our Kitchen</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart-icon" id="cart-icon">
+                <i class="fas fa-shopping-basket fa-lg"></i>
+                <span class="cart-count">0</span>
+            </div>
+            
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Sweetness That <span>Feels Like Home</span></h1>
+                <p>Every dessert we craft is an expression of love, made with the finest ingredients and a whole lot of heart. Experience the taste of homemade goodness in every bite.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">See Our Menu</a>
+                    <a href="#customizer" class="btn">Build Your Own</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Sweets Carousel -->
+    <section class="featured-sweets">
+        <div class="container">
+            <div class="section-title">
+                <h2>Signature Creations</h2>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel" id="product-carousel">
+                    <!-- Product cards will be generated by JavaScript -->
+                </div>
+                
+                <div class="carousel-nav" id="carousel-nav">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2 class="handwritten">Our Story</h2>
+                    <p>Made With Love began in Grandma Eleanor's cozy kitchen, where the aroma of freshly baked cookies and cakes was a daily occurrence. What started as a family tradition of baking for holidays and special occasions soon turned into a passion for creating beautiful, delicious desserts that spread joy.</p>
+                    <p>Today, we continue Grandma Eleanor's legacy by handcrafting each dessert with the same care, attention, and love that she poured into her baking. We believe that the secret ingredient in every memorable dessert is love, and we make sure to add plenty of it to everything we create.</p>
+                    <p>From our family to yours, we invite you to taste the difference that genuine care and artisanal craftsmanship can make.</p>
+                    <a href="#kitchen" class="btn">Visit Our Kitchen</a>
+                </div>
+                
+                <div class="story-icons">
+                    <div class="story-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="story-icon">
+                        <i class="fas fa-mortar-pestle"></i>
+                    </div>
+                    <div class="story-icon">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <div class="story-icon">
+                        <i class="fas fa-oven"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Sweet Menu</h2>
+            </div>
+            
+            <div class="menu-filters" id="menu-filters">
+                <button class="filter-btn active" data-filter="all">All Sweets</button>
+                <button class="filter-btn" data-filter="cakes">Cakes</button>
+                <button class="filter-btn" data-filter="cupcakes">Cupcakes</button>
+                <button class="filter-btn" data-filter="cookies">Cookies</button>
+                <button class="filter-btn" data-filter="chocolates">Chocolates</button>
+                <button class="filter-btn" data-filter="seasonal">Seasonal</button>
+            </div>
+            
+            <div class="menu-grid" id="menu-grid">
+                <!-- Menu items will be generated by JavaScript -->
+            </div>
+            
+            <div class="allergen-toggle">
+                <button class="toggle-btn" id="allergen-toggle">
+                    <i class="fas fa-info-circle"></i> Show Allergen Information
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Build Your Own Dessert Customizer -->
+    <section class="customizer-section" id="customizer">
+        <div class="container">
+            <div class="section-title">
+                <h2>Build Your Dream Dessert</h2>
+                <p>Unleash your creativity and design a sweet masterpiece that's uniquely yours!</p>
+            </div>
+            
+            <div class="customizer-preview" style="text-align: center; margin-bottom: 40px;">
+                <div style="background-color: var(--light-pink); height: 200px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; max-width: 300px; position: relative;">
+                    <div id="dessert-preview">
+                        <i class="fas fa-cookie-bite fa-5x" style="color: var(--cocoa-brown);"></i>
+                        <p style="margin-top: 15px; font-weight: 600;">Your Creation</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+                    <div class="customizer-option">
+                        <h4>Base: <span id="selected-base">Chocolate Cake</span></h4>
+                    </div>
+                    <div class="customizer-option">
+                        <h4>Flavor: <span id="selected-flavor">Vanilla Cream</span></h4>
+                    </div>
+                    <div class="customizer-option">
+                        <h4>Toppings: <span id="selected-toppings">Sprinkles</span></h4>
+                    </div>
+                </div>
+                
+                <div style="font-size: 1.8rem; color: var(--honey-gold); font-weight: 700; margin-bottom: 30px;">
+                    Total: $<span id="customizer-price">24.99</span>
+                </div>
+                
+                <button class="btn btn-primary" id="start-customizer">Start Customizing</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sweet Words From Our Customers</h2>
+            </div>
+            
+            <div class="testimonial-grid" id="testimonial-grid">
+                <!-- Testimonials will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Kitchen Live Section -->
+    <section class="kitchen-live" id="kitchen">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Kitchen Live</h2>
+            </div>
+            
+            <div class="kitchen-video">
+                <div class="live-badge">
+                    <i class="fas fa-circle"></i> LIVE
+                </div>
+                
+                <div class="kitchen-text">
+                    <h3 class="handwritten">Fresh Batches Made Daily</h3>
+                    <p>Step inside our kitchen and see how we create our delicious treats with love and care.</p>
+                    <button class="btn" style="margin-top: 20px;">Schedule a Tour</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter">
+                <h2 class="handwritten">Join Our Sweet Family</h2>
+                <p>Subscribe to our newsletter and be the first to know about new creations, seasonal specials, and exclusive offers.</p>
+                
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="steam" id="steam">
+            <!-- Steam animation elements will be generated by JavaScript -->
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <h3>Made With Love</h3>
+                    </div>
+                    <p>Creating artisanal desserts with love and care since 2010. Every bite tells a story of passion and tradition.</p>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Friday: 8am - 8pm</p>
+                    <p>Saturday: 9am - 9pm</p>
+                    <p>Sunday: 10am - 6pm</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Sweet Street, Dessertville</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> hello@madewithlove.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Made With Love. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: var(--pastel-pink);"></i> and sugar</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header">
+            <h3>Your Sweet Cart</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <p style="text-align: center; padding: 20px;">Your cart is empty. Add some sweet treats!</p>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <button class="btn btn-primary" style="width: 100%;">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Customizer Modal -->
+    <div class="customizer-modal" id="customizer-modal">
+        <div class="customizer-content">
+            <button class="close-customizer" id="close-customizer">&times;</button>
+            <h2 style="margin-bottom: 20px;">Build Your Dessert</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div>
+                    <h3>Choose Your Base</h3>
+                    <div class="customizer-options" id="base-options">
+                        <!-- Options will be generated by JavaScript -->
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Choose Your Flavor</h3>
+                    <div class="customizer-options" id="flavor-options">
+                        <!-- Options will be generated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Choose Your Toppings</h3>
+                    <div class="customizer-options" id="topping-options">
+                        <!-- Options will be generated by JavaScript -->
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background-color: var(--creamy-beige); border-radius: 15px;">
+                        <h3>Your Creation</h3>
+                        <p id="customizer-summary">Chocolate Cake with Vanilla Cream and Sprinkles</p>
+                        <h3 style="color: var(--honey-gold); margin-top: 15px;">$<span id="modal-price">24.99</span></h3>
+                        <button class="btn btn-primary" style="margin-top: 15px; width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for modals -->
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        // Product Data for Carousel
+        const featuredProducts = [
+            {
+                id: 1,
+                name: "Grandma's Chocolate Cake",
+                description: "Rich, moist chocolate cake with layers of fudge frosting",
+                price: 34.99,
+                category: "cakes",
+                imageColor: "#8B4513"
+            },
+            {
+                id: 2,
+                name: "Vanilla Dream Cupcakes",
+                description: "Fluffy vanilla cupcakes with buttercream swirl",
+                price: 24.99,
+                category: "cupcakes",
+                imageColor: "#FFD6D6"
+            },
+            {
+                id: 3,
+                name: "Artisanal Cookies Box",
+                description: "Assortment of hand-decorated seasonal cookies",
+                price: 29.99,
+                category: "cookies",
+                imageColor: "#FFB347"
+            },
+            {
+                id: 4,
+                name: "Heartfelt Chocolate Truffles",
+                description: "Luxury dark chocolate truffles with edible gold",
+                price: 39.99,
+                category: "chocolates",
+                imageColor: "#A0522D"
+            },
+            {
+                id: 5,
+                name: "Pumpkin Spice Delight",
+                description: "Seasonal favorite with cinnamon and nutmeg",
+                price: 32.99,
+                category: "seasonal",
+                imageColor: "#FFB347"
+            }
+        ];
+
+        // Menu Data
+        const menuItems = [
+            { id: 1, name: "Triple Chocolate Cake", price: 36.99, category: "cakes", allergens: "Contains: Milk, Eggs, Wheat, Soy" },
+            { id: 2, name: "Red Velvet Supreme", price: 34.99, category: "cakes", allergens: "Contains: Milk, Eggs, Wheat" },
+            { id: 3, name: "Lemon Berry Cupcakes", price: 26.99, category: "cupcakes", allergens: "Contains: Milk, Eggs, Wheat" },
+            { id: 4, name: "Salted Caramel Cupcakes", price: 27.99, category: "cupcakes", allergens: "Contains: Milk, Eggs, Wheat, Nuts" },
+            { id: 5, name: "Classic Chocolate Chip", price: 18.99, category: "cookies", allergens: "Contains: Milk, Eggs, Wheat" },
+            { id: 6, name: "Shortbread Hearts", price: 22.99, category: "cookies", allergens: "Contains: Milk, Wheat" },
+            { id: 7, name: "Dark Chocolate Assortment", price: 42.99, category: "chocolates", allergens: "Contains: Milk, Soy" },
+            { id: 8, name: "Hazelnut Pralines", price: 39.99, category: "chocolates", allergens: "Contains: Milk, Nuts" },
+            { id: 9, name: "Holiday Gingerbread House", price: 49.99, category: "seasonal", allergens: "Contains: Milk, Eggs, Wheat" },
+            { id: 10, name: "Valentine's Heart Box", price: 45.99, category: "seasonal", allergens: "Contains: Milk, Eggs, Wheat, Nuts" }
+        ];
+
+        // Testimonials Data
+        const testimonials = [
+            { name: "Sarah M.", text: "The most delicious desserts I've ever tasted! You can truly feel the love in every bite." },
+            { name: "James L.", text: "Ordered a custom cake for my wife's birthday and she cried tears of joy. Perfection!" },
+            { name: "Emma R.", text: "These treats remind me of my grandmother's baking. So nostalgic and absolutely delicious." }
+        ];
+
+        // Customizer Options
+        const customizerOptions = {
+            bases: [
+                { name: "Chocolate Cake", price: 18.99 },
+                { name: "Vanilla Sponge", price: 16.99 },
+                { name: "Red Velvet", price: 19.99 },
+                { name: "Carrot Cake", price: 20.99 }
+            ],
+            flavors: [
+                { name: "Vanilla Cream", price: 8.99 },
+                { name: "Chocolate Ganache", price: 9.99 },
+                { name: "Cream Cheese", price: 8.99 },
+                { name: "Raspberry Jam", price: 7.99 }
+            ],
+            toppings: [
+                { name: "Sprinkles", price: 2.99 },
+                { name: "Fresh Berries", price: 5.99 },
+                { name: "Chocolate Shavings", price: 4.99 },
+                { name: "Edible Flowers", price: 6.99 },
+                { name: "Gold Leaf", price: 9.99 }
+            ]
+        };
+
+        // Cart State
+        let cart = [];
+        let currentSlide = 0;
+
+        // DOM Elements
+        const cartIcon = document.getElementById('cart-icon');
+        const cartModal = document.getElementById('cart-modal');
+        const closeCart = document.getElementById('close-cart');
+        const cartItems = document.getElementById('cart-items');
+        const cartCount = document.querySelector('.cart-count');
+        const productCarousel = document.getElementById('product-carousel');
+        const carouselNav = document.getElementById('carousel-nav');
+        const menuGrid = document.getElementById('menu-grid');
+        const menuFilters = document.getElementById('menu-filters');
+        const testimonialGrid = document.getElementById('testimonial-grid');
+        const startCustomizer = document.getElementById('start-customizer');
+        const customizerModal = document.getElementById('customizer-modal');
+        const closeCustomizer = document.getElementById('close-customizer');
+        const overlay = document.getElementById('overlay');
+        const baseOptions = document.getElementById('base-options');
+        const flavorOptions = document.getElementById('flavor-options');
+        const toppingOptions = document.getElementById('topping-options');
+        const customizerPrice = document.getElementById('customizer-price');
+        const modalPrice = document.getElementById('modal-price');
+        const customizerSummary = document.getElementById('customizer-summary');
+        const selectedBase = document.getElementById('selected-base');
+        const selectedFlavor = document.getElementById('selected-flavor');
+        const selectedToppings = document.getElementById('selected-toppings');
+        const allergenToggle = document.getElementById('allergen-toggle');
+        const newsletterForm = document.getElementById('newsletter-form');
+        const steamContainer = document.getElementById('steam');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize carousel
+            initCarousel();
+            
+            // Initialize menu
+            initMenu();
+            
+            // Initialize testimonials
+            initTestimonials();
+            
+            // Initialize customizer options
+            initCustomizer();
+            
+            // Initialize steam animation
+            initSteam();
+            
+            // Event Listeners
+            cartIcon.addEventListener('click', openCart);
+            closeCart.addEventListener('click', closeCartModal);
+            startCustomizer.addEventListener('click', openCustomizer);
+            closeCustomizer.addEventListener('click', closeCustomizerModal);
+            overlay.addEventListener('click', closeAllModals);
+            allergenToggle.addEventListener('click', toggleAllergenInfo);
+            newsletterForm.addEventListener('submit', handleNewsletterSubmit);
+            
+            // Filter buttons for menu
+            const filterButtons = menuFilters.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Filter menu items
+                    const filter = this.getAttribute('data-filter');
+                    filterMenuItems(filter);
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const nav = document.querySelector('nav ul');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#home') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        nav.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Update customizer price when options change
+            document.addEventListener('customizerUpdate', updateCustomizerPrice);
+        });
+
+        // Initialize Carousel
+        function initCarousel() {
+            // Clear carousel
+            productCarousel.innerHTML = '';
+            carouselNav.innerHTML = '';
+            
+            // Create product cards
+            featuredProducts.forEach((product, index) => {
+                // Create product card
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image" style="background-color: ${product.imageColor};"></div>
+                    <div class="product-content">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <div class="product-price">$${product.price.toFixed(2)}</div>
+                        <div class="product-actions">
+                            <button class="btn" onclick="addToCart(${product.id}, '${product.name}', ${product.price})">Add to Cart</button>
+                            <button class="btn" onclick="viewProductStory(${product.id})">View Story</button>
+                        </div>
+                    </div>
+                `;
+                
+                productCarousel.appendChild(productCard);
+                
+                // Create carousel dot
+                const dot = document.createElement('div');
+                dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', () => goToSlide(index));
+                carouselNav.appendChild(dot);
+            });
+            
+            // Auto-rotate carousel
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % featuredProducts.length;
+                updateCarousel();
+            }, 5000);
+        }
+
+        function updateCarousel() {
+            const cardWidth = 300 + 30; // card width + gap
+            productCarousel.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+            
+            // Update active dot
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Initialize Menu
+        function initMenu() {
+            // Clear menu grid
+            menuGrid.innerHTML = '';
+            
+            // Create menu items
+            menuItems.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'menu-item';
+                menuItem.setAttribute('data-category', item.category);
+                menuItem.innerHTML = `
+                    <div class="menu-item-image"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h4>${item.name}</h4>
+                            <span class="product-price">$${item.price.toFixed(2)}</span>
+                        </div>
+                        <p class="allergen-info" style="display: none; font-size: 0.9rem; color: var(--soft-brown); margin-top: 10px;">${item.allergens}</p>
+                        <button class="btn" style="margin-top: 15px; width: 100%;" onclick="addToCart(${item.id}, '${item.name}', ${item.price})">Add to Cart</button>
+                    </div>
+                `;
+                
+                menuGrid.appendChild(menuItem);
+            });
+        }
+
+        function filterMenuItems(category) {
+            const items = document.querySelectorAll('.menu-item');
+            
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Initialize Testimonials
+        function initTestimonials() {
+            testimonialGrid.innerHTML = '';
+            
+            testimonials.forEach(testimonial => {
+                const testimonialCard = document.createElement('div');
+                testimonialCard.className = 'testimonial-card';
+                testimonialCard.innerHTML = `
+                    <div class="testimonial-text">${testimonial.text}</div>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div>
+                            <h4>${testimonial.name}</h4>
+                            <div style="color: var(--honey-gold);">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                testimonialGrid.appendChild(testimonialCard);
+            });
+        }
+
+        // Initialize Customizer
+        function initCustomizer() {
+            // Clear options
+            baseOptions.innerHTML = '';
+            flavorOptions.innerHTML = '';
+            toppingOptions.innerHTML = '';
+            
+            // Create base options
+            customizerOptions.bases.forEach((base, index) => {
+                const option = document.createElement('div');
+                option.className = 'customizer-option-item';
+                option.innerHTML = `
+                    <label style="display: flex; justify-content: space-between; padding: 10px; background-color: ${index === 0 ? 'var(--pastel-pink)' : 'var(--creamy-beige)'}; border-radius: 10px; margin-bottom: 10px; cursor: pointer;">
+                        <span>${base.name}</span>
+                        <span>+$${base.price.toFixed(2)}</span>
+                        <input type="radio" name="base" value="${base.name}" ${index === 0 ? 'checked' : ''} style="display: none;">
+                    </label>
+                `;
+                
+                option.addEventListener('click', function() {
+                    // Update visual selection
+                    document.querySelectorAll('#base-options .customizer-option-item label').forEach(label => {
+                        label.style.backgroundColor = 'var(--creamy-beige)';
+                    });
+                    this.querySelector('label').style.backgroundColor = 'var(--pastel-pink)';
+                    
+                    // Update selection
+                    selectedBase.textContent = base.name;
+                    
+                    // Trigger custom event for price update
+                    document.dispatchEvent(new Event('customizerUpdate'));
+                });
+                
+                baseOptions.appendChild(option);
+            });
+            
+            // Create flavor options
+            customizerOptions.flavors.forEach((flavor, index) => {
+                const option = document.createElement('div');
+                option.className = 'customizer-option-item';
+                option.innerHTML = `
+                    <label style="display: flex; justify-content: space-between; padding: 10px; background-color: ${index === 0 ? 'var(--pastel-pink)' : 'var(--creamy-beige)'}; border-radius: 10px; margin-bottom: 10px; cursor: pointer;">
+                        <span>${flavor.name}</span>
+                        <span>+$${flavor.price.toFixed(2)}</span>
+                        <input type="radio" name="flavor" value="${flavor.name}" ${index === 0 ? 'checked' : ''} style="display: none;">
+                    </label>
+                `;
+                
+                option.addEventListener('click', function() {
+                    // Update visual selection
+                    document.querySelectorAll('#flavor-options .customizer-option-item label').forEach(label => {
+                        label.style.backgroundColor = 'var(--creamy-beige)';
+                    });
+                    this.querySelector('label').style.backgroundColor = 'var(--pastel-pink)';
+                    
+                    // Update selection
+                    selectedFlavor.textContent = flavor.name;
+                    
+                    // Trigger custom event for price update
+                    document.dispatchEvent(new Event('customizerUpdate'));
+                });
+                
+                flavorOptions.appendChild(option);
+            });
+            
+            // Create topping options (multiple selection)
+            customizerOptions.toppings.forEach((topping, index) => {
+                const option = document.createElement('div');
+                option.className = 'customizer-option-item';
+                option.innerHTML = `
+                    <label style="display: flex; justify-content: space-between; padding: 10px; background-color: ${index === 0 ? 'var(--pastel-pink)' : 'var(--creamy-beige)'}; border-radius: 10px; margin-bottom: 10px; cursor: pointer;">
+                        <span>${topping.name}</span>
+                        <span>+$${topping.price.toFixed(2)}</span>
+                        <input type="checkbox" name="topping" value="${topping.name}" ${index === 0 ? 'checked' : ''} style="display: none;">
+                    </label>
+                `;
+                
+                option.addEventListener('click', function() {
+                    const checkbox = this.querySelector('input');
+                    checkbox.checked = !checkbox.checked;
+                    
+                    // Update visual selection
+                    this.querySelector('label').style.backgroundColor = checkbox.checked ? 'var(--pastel-pink)' : 'var(--creamy-beige)';
+                    
+                    // Update selected toppings text
+                    updateSelectedToppings();
+                    
+                    // Trigger custom event for price update
+                    document.dispatchEvent(new Event('customizerUpdate'));
+                });
+                
+                toppingOptions.appendChild(option);
+            });
+            
+            // Initialize selected toppings text
+            updateSelectedToppings();
+        }
+
+        function updateSelectedToppings() {
+            const selectedToppings = [];
+            const toppingCheckboxes = document.querySelectorAll('#topping-options input[type="checkbox"]:checked');
+            
+            toppingCheckboxes.forEach(checkbox => {
+                selectedToppings.push(checkbox.value);
+            });
+            
+            // Update text
+            document.getElementById('selected-toppings').textContent = selectedToppings.join(', ');
+            customizerSummary.textContent = `${selectedBase.textContent} with ${selectedFlavor.textContent} and ${selectedToppings.join(', ')}`;
+        }
+
+        function updateCustomizerPrice() {
+            let total = 0;
+            
+            // Get selected base price
+            const selectedBaseOption = customizerOptions.bases.find(base => base.name === selectedBase.textContent);
+            total += selectedBaseOption.price;
+            
+            // Get selected flavor price
+            const selectedFlavorOption = customizerOptions.flavors.find(flavor => flavor.name === selectedFlavor.textContent);
+            total += selectedFlavorOption.price;
+            
+            // Get selected toppings prices
+            const toppingCheckboxes = document.querySelectorAll('#topping-options input[type="checkbox"]:checked');
+            toppingCheckboxes.forEach(checkbox => {
+                const toppingOption = customizerOptions.toppings.find(topping => topping.name === checkbox.value);
+                total += toppingOption.price;
+            });
+            
+            // Update prices
+            customizerPrice.textContent = total.toFixed(2);
+            modalPrice.textContent = total.toFixed(2);
+        }
+
+        // Initialize Steam Animation
+        function initSteam() {
+            // Create multiple steam elements
+            for (let i = 0; i < 8; i++) {
+                const steamElement = document.createElement('span');
+                steamElement.style.left = `${10 + i * 12.5}%`;
+                steamElement.style.width = `${Math.random() * 30 + 20}px`;
+                steamElement.style.height = steamElement.style.width;
+                steamElement.style.animationDelay = `${Math.random() * 5}s`;
+                steamContainer.appendChild(steamElement);
+            }
+        }
+
+        // Cart Functions
+        function addToCart(id, name, price) {
+            // Check if item already in cart
+            const existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: id,
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+            }
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Show confirmation
+            showNotification(`${name} added to cart!`);
+        }
+
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        function openCart() {
+            cartModal.classList.add('active');
+            overlay.classList.add('active');
+            updateCartDisplay();
+        }
+
+        function closeCartModal() {
+            cartModal.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        function updateCartDisplay() {
+            // Clear cart items
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; padding: 20px;">Your cart is empty. Add some sweet treats!</p>';
+                return;
+            }
+            
+            // Create cart items
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.style.display = 'flex';
+                cartItem.style.justifyContent = 'space-between';
+                cartItem.style.alignItems = 'center';
+                cartItem.style.padding = '15px 0';
+                cartItem.style.borderBottom = '1px solid #eee';
+                
+                cartItem.innerHTML = `
+                    <div>
+                        <h4 style="margin-bottom: 5px;">${item.name}</h4>
+                        <div style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                            <button onclick="updateCartItem(${item.id}, -1)" style="background: var(--pastel-pink); border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer;">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateCartItem(${item.id}, 1)" style="background: var(--pastel-pink); border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer;">+</button>
+                            <button onclick="removeFromCart(${item.id})" style="background: none; border: none; color: var(--cocoa-brown); margin-left: 10px; cursor: pointer;">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div>$${item.price.toFixed(2)} each</div>
+                        <div style="font-weight: 700; color: var(--honey-gold); margin-top: 5px;">$${itemTotal.toFixed(2)}</div>
+                    </div>
+                `;
+                
+                cartItems.appendChild(cartItem);
+            });
+            
+            // Add total
+            const totalElement = document.createElement('div');
+            totalElement.style.display = 'flex';
+            totalElement.style.justifyContent = 'space-between';
+            totalElement.style.padding = '20px 0';
+            totalElement.style.fontWeight = '700';
+            totalElement.style.fontSize = '1.2rem';
+            totalElement.innerHTML = `
+                <span>Total:</span>
+                <span style="color: var(--honey-gold);">$${total.toFixed(2)}</span>
+            `;
+            
+            cartItems.appendChild(totalElement);
+        }
+
+        function updateCartItem(id, change) {
+            const item = cart.find(item => item.id === id);
+            
+            if (item) {
+                item.quantity += change;
+                
+                if (item.quantity <= 0) {
+                    removeFromCart(id);
+                } else {
+                    updateCartCount();
+                    updateCartDisplay();
+                }
+            }
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartCount();
+            updateCartDisplay();
+        }
+
+        // Customizer Functions
+        function openCustomizer() {
+            customizerModal.classList.add('active');
+            overlay.classList.add('active');
+        }
+
+        function closeCustomizerModal() {
+            customizerModal.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        // Utility Functions
+        function closeAllModals() {
+            cartModal.classList.remove('active');
+            customizerModal.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        function toggleAllergenInfo() {
+            const allergenInfos = document.querySelectorAll('.allergen-info');
+            const toggleBtn = document.getElementById('allergen-toggle');
+            
+            const isVisible = allergenInfos[0].style.display === 'block';
+            
+            allergenInfos.forEach(info => {
+                info.style.display = isVisible ? 'none' : 'block';
+            });
+            
+            toggleBtn.innerHTML = isVisible ? 
+                '<i class="fas fa-info-circle"></i> Show Allergen Information' : 
+                '<i class="fas fa-info-circle"></i> Hide Allergen Information';
+        }
+
+        function viewProductStory(id) {
+            const product = featuredProducts.find(p => p.id === id);
+            if (product) {
+                alert(`The story behind ${product.name}:\n\nThis recipe has been passed down through generations in our family. Each ingredient is carefully selected, and every step is done by hand to ensure the highest quality and most delicious result.`);
+            }
+        }
+
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = 'var(--cocoa-brown)';
+            notification.style.color = 'white';
+            notification.style.padding = '15px 20px';
+            notification.style.borderRadius = '10px';
+            notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+            notification.style.zIndex = '10000';
+            notification.style.transform = 'translateX(150%)';
+            notification.style.transition = 'transform 0.3s ease';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Show notification
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // Hide and remove notification after 3 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(150%)';
+                
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            
+            // In a real application, you would send this to a server
+            showNotification(`Thank you for subscribing with ${email}! You'll receive our sweet updates soon.`);
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
